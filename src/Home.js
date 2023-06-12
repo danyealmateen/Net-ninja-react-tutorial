@@ -9,10 +9,15 @@ export function Home() {
         { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'mario', id: 3 }
     ]);
 
+    function handleDelete(id) {
+        const newBlogs = blogs.filter(blog => blog.id !== id);
+        setBlogs(newBlogs);
+    }
+
 
     return (
         <div className="home">
-            <BlogList blogs={blogs} title="All blogs!" />
+            <BlogList blogs={blogs} title="All blogs!" handleDelete={handleDelete} />
         </div>
     )
 }
