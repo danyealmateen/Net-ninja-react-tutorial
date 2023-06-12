@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { BlogList } from './BlogList';
 
 export function Home() {
@@ -14,6 +14,9 @@ export function Home() {
         setBlogs(newBlogs);
     }
 
+    useEffect(() => {
+        console.log("UseEffect körs!")
+    });
 
     return (
         <div className="home">
