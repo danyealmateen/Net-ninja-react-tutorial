@@ -18,7 +18,7 @@ export function Home() {
 
     useEffect(() => {
         console.log("UseEffect körs!")
-    }, [name]);
+    }, []);
 
     return (
         <div className="home">
