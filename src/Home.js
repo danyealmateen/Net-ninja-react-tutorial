@@ -5,10 +5,6 @@ export function Home() {
 
     const [blogs, setBlogs] = useState(null);
 
-    function handleDelete(id) {
-        const newBlogs = blogs.filter(blog => blog.id !== id);
-        setBlogs(newBlogs);
-    }
 
     useEffect(() => {
         fetch("http://localhost:8000/blogs")
@@ -22,7 +18,7 @@ export function Home() {
 
     return (
         <div className="home">
-            { blogs && <BlogList blogs={blogs} title="All blogs!" handleDelete={handleDelete} />}
+            {blogs && <BlogList blogs={blogs} title="All blogs!" />}
         </div>
     )
 }

@@ -1,5 +1,5 @@
 
-export function BlogList({ blogs, title, handleDelete }) {
+export function BlogList({ blogs, title, }) {
 
     return (
         <div className="blog-list">
@@ -8,10 +8,8 @@ export function BlogList({ blogs, title, handleDelete }) {
                 <div className="blog-preview" key={blog.id}>
                     <h2> {blog.title}</h2>
                     <p>Written by: {blog.author}</p>
-                    <button onClick={() => handleDelete(blog.id)}>Delete blog</button>
                 </div>
             ))}
-
         </div>
     )
 }
