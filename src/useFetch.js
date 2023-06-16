@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useFetch = () => {
+const useFetch = (url) => {
 
     const [data, setData] = useState(null);
     const [isPending, setIsPending] = useState(true)
@@ -9,7 +9,7 @@ const useFetch = () => {
 
     useEffect(() => {
         setTimeout(() => {
-            fetch("http://localhost:8000/blogs")
+            fetch(url)
                 .then(res => {
 
                     if (!res.ok) {
@@ -27,7 +27,7 @@ const useFetch = () => {
                     setError(err.message)
                 })
         }, 1000)
-    }, []);
+    }, [url]);
 
     return { data, isPending, error }
 }
